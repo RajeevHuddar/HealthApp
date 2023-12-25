@@ -1,0 +1,91 @@
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0; /* Light gray background */
+}
+
+header {
+    background: linear-gradient(to right, #3498db, #2980b9); /* Gradient background */
+    color: white;
+    text-align: center;
+    padding: 1em;
+    min-height: 60px; /* Minimum height to prevent shifting */
+    box-sizing: border-box;
+}
+
+nav {
+    background-color: #2c3e50; /* Dark gray background */
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+nav li {
+    float: left;
+}
+
+nav a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+nav a:hover {
+    background-color: #34495e; /* Slightly darker gray on hover */
+}
+
+main {
+    padding: 20px;
+}
+
+footer {
+    background: linear-gradient(to right, #3498db, #2980b9); /* Gradient background */
+    color: white;
+    text-align: center;
+    padding: 1em;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    min-height: 40px; /* Minimum height to prevent shifting */
+    box-sizing: border-box;
+}
+
+/* Form styling */
+form {
+    max-width: 400px;
+    margin: auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Upcoming and Past Reminders styling */
+#upcomingReminders, #pastReminders {
+    margin-top: 20px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#upcomingList, #pastList {
+    list-style-type: none;
+    padding: 0;
+}
+
+#upcomingList li, #pastList li {
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #ecf0f1; /* Light gray background for list items */
+    border-radius: 4px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}

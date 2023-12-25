@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Additional CSS for responsiveness */
+        form {
+            max-width: 400px;
+            margin: auto;
+        }
+
+        #upcomingReminders, #pastReminders {
+            margin-top: 20px;
+        }
+
+        @media only screen and (min-width: 600px) {
+            form {
+                max-width: 600px;
+            }
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <title>Reminders - Health App</title>
+</head>
+<body>
+    <header>
+        <h1>Health App</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="Wellness Tips.html">Wellness Tips</a></li>
+            <li><a href="reminders.html">Reminders</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section>
+            <h2>Reminders</h2>
+            <p>Set your medicine reminders below:</p>
+
+            <!-- Reminder Form -->
+            <form id="reminderForm">
+                <label for="medicationName">Medication Name:</label>
+                <input type="text" id="medicationName" name="medicationName" required>
+
+                <label for="reminderTime">Reminder Time:</label>
+                <input type="time" id="reminderTime" name="reminderTime" required>
+
+                <button type="submit">Set Reminder</button>
+            </form>
+
+            <!-- Display Upcoming Reminders -->
+            <div id="upcomingReminders">
+                <h3>Upcoming Reminders</h3>
+                <ul id="upcomingList"></ul>
+            </div>
+
+            <!-- Display Past Reminders -->
+            <div id="pastReminders">
+                <h3>Past Reminders</h3>
+                <ul id="pastList"></ul>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2023 Health App</p>
+    </footer>
+
+    <script>
+        $(document).ready(function () {
+            // Handle form submission
+            $("#reminderForm").submit(function (event) {
+                event.preventDefault();
+
+                // Get user inputs
+                var medicationName = $("#medicationName").val();
+                var reminderTime = $("#reminderTime").val();
+
+                // Create a new list item for the reminder
+                var listItem = $("<li>").text(medicationName + " - " + reminderTime);
+
+                // Check if the reminder is in the past or upcoming
+                var currentTime = new Date();
+                var reminderDateTime = new Date("2023-01-01 " + reminderTime); // Assuming reminders are set for today
+
+                if (reminderDateTime > currentTime) {
+                    // Upcoming reminder
+                    $("#upcomingList").append(listItem);
+                } else {
+                    // Past reminder
+                    $("#pastList").append(listItem);
+                }
+
+                // Clear the form inputs
+                $("#medicationName").val("");
+                $("#reminderTime").val("");
+            });
+        });
+    </script>
+</body>
+</html>

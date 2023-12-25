@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Additional styles for the expanded blog content */
+        .expanded-blog {
+            display: none;
+            padding: 20px;
+            background-color: #f5f5f5;
+            border-radius: 8px;
+            margin-top: 10px;
+        }
+
+        .expanded-blog p {
+            line-height: 1.5;
+        }
+
+        .wellness-blogs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .blog {
+            flex: 1 1 300px;
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .blog:hover {
+            transform: scale(1.05);
+        }
+
+        .blog h3 {
+            color: #3498db;
+            margin-bottom: 10px;
+        }
+    </style>
+    <title>Wellness Tips - Health App</title>
+</head>
+<body>
+    <header>
+        <h1>Health App</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="Wellness Tips.html">Wellness Tips</a></li>
+            <li><a href="reminders.html">Reminders</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <!-- Add more navigation links as needed -->
+        </ul>
+    </nav>
+
+    <main>
+        <section>
+            <h2>Wellness Tips</h2>
+
+            <!-- Wellness Blogs -->
+            <div class="wellness-blogs">
+                <!-- Blog 1 -->
+                <div class="blog" onclick="toggleBlog('blog1')">
+                    <h3>5 Healthy Habits for a Better Life</h3>
+                    <p>Establishing healthy habits is key to maintaining overall well-being...</p>
+                    <div id="blog1" class="expanded-blog">
+                        <p>Discover a path to improved well-being with these 5 healthy habits. Embrace daily exercise, nourish your body with balanced nutrition, and prioritize self-care. These practices pave the way to a healthier, more fulfilling life</p>
+                        <!-- Add more detailed content for Blog 1 -->
+                    </div>
+                </div>
+
+                <!-- Blog 2 -->
+                <div class="blog" onclick="toggleBlog('blog2')">
+                    <h3>The Importance of Regular Exercise</h3>
+                    <p>Discover how incorporating regular exercise into your routine can benefit your health...</p>
+                    <div id="blog2" class="expanded-blog">
+                        <p>Regular exercise is a cornerstone of a healthy lifestyle. It not only boosts physical fitness but also enhances mental well-being. Embrace the importance of consistent physical activity for a happier, healthier you.</p>
+                        <!-- Add more detailed content for Blog 2 -->
+                    </div>
+                </div>
+
+                <!-- Blog 3 -->
+                <div class="blog" onclick="toggleBlog('blog3')">
+                    <h3>Healthy Eating: A Guide to Nutrient-Rich Foods</h3>
+                    <p>Explore the world of nutrient-rich foods and their positive impact on your health...</p>
+                    <div id="blog3" class="expanded-blog">
+                        <p>Navigate the world of nutrient-rich foods with this guide to healthy eating. Learn to make mindful choices that nourish your body, promote wellness, and contribute to a balanced and vibrant lifestyle.</p>
+                        <!-- Add more detailed content for Blog 3 -->
+                    </div>
+                </div>
+
+                <!-- Blog 4 -->
+                <div class="blog" onclick="toggleBlog('blog4')">
+                    <h3>The Benefits of Quality Sleep</h3>
+                    <p>Learn about the importance of quality sleep and its impact on overall health...</p>
+                    <div id="blog4" class="expanded-blog">
+                        <p>Unlock the numerous benefits of quality sleep for your overall well-being. From enhanced cognitive function to improved mood, prioritizing restful sleep is a key component of a healthier and happier life.</p>
+                        <!-- Add more detailed content for Blog 4 -->
+                    </div>
+                </div>
+
+                <!-- Blog 5 -->
+                <div class="blog" onclick="toggleBlog('blog5')">
+                    <h3>Stress Management Techniques</h3>
+                    <p>Explore effective stress management techniques for a healthier lifestyle...</p>
+                    <div id="blog5" class="expanded-blog">
+                        <p>Explore effective stress management techniques to cultivate a sense of calm and balance in your life. From mindfulness practices to relaxation exercises, discover strategies that empower you to navigate stress and enhance your overall well-being.</p>
+                        <!-- Add more detailed content for Blog 5 -->
+                    </div>
+                </div>
+
+                <!-- Add more blogs as needed -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Health App</p>
+    </footer>
+
+    <script>
+        function toggleBlog(blogId) {
+            const blog = document.getElementById(blogId);
+            blog.style.display = (blog.style.display === 'none' || blog.style.display === '') ? 'block' : 'none';
+        }
+    </script>
+</body>
+</html>
